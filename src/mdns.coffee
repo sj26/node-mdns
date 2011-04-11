@@ -22,9 +22,10 @@ module.exports = class mDNSResponder extends EventEmitter
     @socket.bind 5353, "224.0.0.251"
   
   message: (buffer, sender) ->
-    message = new ndns.ServerRequest @socket, sender
-    message.parseOnce buffer
-    @emit "request", message
+    request = new ndns.ServerRequest @socket, sender
+    if request.parseOnce buffer
+      response = new ndns.ServerResponse request
+      @emit "request", request, response
   
   stop: ->
     @socket.close
