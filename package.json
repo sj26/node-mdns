@@ -1,0 +1,22 @@
+{ "name": "mdns",
+  "description": "mDNS for node using ndns",
+  "version": "0.0.1",
+  "author": "Samuel Cochran",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/sj26/node-mdns.git"
+  },
+  "licenses": [
+    { "type": "MIT",
+      "url": "http://github.com/sj26/node-mdns/raw/master/LICENSE"
+    }
+  ],
+  "main": "./lib/command.js",
+  "dependencies": {
+    "ndns": ">= 0.1.2"
+  },
+  "devDependencies": {
+    "coffee-script": ">= 1.0.0"
+  },
+  "engines" : { "node" : ">=0.4.1" }
+}
